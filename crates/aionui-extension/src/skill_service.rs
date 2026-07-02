@@ -1,3 +1,4 @@
+// force recompile — builtin-skills assets updated
 use std::io;
 use std::path::{Component, Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -3639,3 +3640,10 @@ mod tests {
         assert_eq!(nested, "payload");
     }
 }
+// force rebuild $(date)
+// force rebuild v4
+// rebuild v5
+// rebuild v8
+// rebuild v12
+// rebuild v13
+// skills rebuild

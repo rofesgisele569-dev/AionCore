@@ -320,7 +320,9 @@ async fn load_user_mcp_servers(
         let selected = selected_ids
             .map(|ids| ids.iter().any(|id| id == &row.id))
             .unwrap_or(row.enabled);
-        if !selected || row.builtin {
+        // Builtin MCP servers are injected alongside user-enabled
+        // ones so that built-in assistants (e.g. Jira) can use them.
+        if !selected {
             continue;
         }
 
@@ -1114,3 +1116,4 @@ mod tests {
         assert_eq!(overrides.system_prompt.as_deref(), Some("Be concise."));
     }
 }
+

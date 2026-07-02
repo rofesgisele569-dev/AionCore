@@ -312,7 +312,7 @@ async fn load_user_mcp_servers(
         let selected = selected_ids
             .map(|ids| ids.iter().any(|id| id == &row.id))
             .unwrap_or(row.enabled);
-        if !selected || row.builtin {
+        if !selected {
             continue;
         }
         if !row_supported_by_capabilities(&row, capabilities) {
@@ -826,7 +826,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn load_user_mcp_servers_skips_disabled_and_builtin() {
+    async fn load_user_mcp_servers_skips_only_disabled() {
         let stdio_config = stdio_config_for_existing_command();
         let caps = AcpMcpCapabilities {
             stdio: true,
@@ -848,11 +848,13 @@ mod tests {
             fail: false,
         });
         let servers = load_user_mcp_servers(repo.as_ref(), None, "conv-1", &caps).await;
-        assert_eq!(servers.len(), 1);
-        match &servers[0] {
-            McpServer::Stdio(s) => assert_eq!(s.name, "user-enabled"),
-            _ => panic!("expected stdio"),
-        }
+        assert_eq!(servers.len(), 2, "should include both user-enabled and builtin-enabled");
+        let names: Vec<&str> = servers.iter().map(|s| match s {
+            McpServer::Stdio(s) => s.name.as_str(),
+            _ => "",
+        }).collect();
+        assert!(names.contains(&"user-enabled"));
+        assert!(names.contains(&"builtin"));
     }
 
     #[tokio::test]
@@ -941,3 +943,4 @@ mod tests {
         assert!(servers.is_empty());
     }
 }
+

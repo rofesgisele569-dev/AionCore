@@ -1,3 +1,4 @@
+// force recompile — builtin-assistants assets updated
 //! Built-in assistant registry — embeds the manifest + rule/avatar
 //! assets into the binary via `include_dir`, with an optional filesystem
 //! fallback for E2E tests.
@@ -477,3 +478,16 @@ mod tests {
         assert_eq!(asset.extension.as_deref(), Some("svg"));
     }
 }
+// force rebuild $(date)
+// rebuild v3
+// force rebuild v4
+// rebuild v5
+// rebuild v6
+// rebuild v7
+// rebuild v9
+// rebuild v10
+// rebuild v11
+// rebuild v12
+// rebuild v13
+// force fresh
+// final rebuild
