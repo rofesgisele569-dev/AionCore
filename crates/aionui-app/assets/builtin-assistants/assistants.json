@@ -4,217 +4,49 @@
     {
       "id": "cowork",
       "name": "Cowork",
-      "name_i18n": {
-        "en-US": "Cowork",
-        "zh-CN": "Cowork",
-        "ru-RU": "Cowork",
-        "uk-UA": "Cowork"
-      },
-      "description": "Deep thinking partner — domain modeling, plan grilling, skill writing, and systematic design reviews. Use for architecture decisions, design critiques, and structured reasoning.",
-      "description_i18n": {
-        "en-US": "Deep thinking partner — domain modeling, plan grilling, skill writing, and systematic design reviews. Use for architecture decisions, design critiques, and structured reasoning.",
-        "zh-CN": "深度思考伙伴 — 领域建模、方案拷问、技能编写、系统化设计评审。适用于架构决策、设计批评、结构化推理。",
-        "ru-RU": "Партнёр для глубокого мышления — моделирование предметной области, критика планов, написание навыков, систематические обзоры дизайна.",
-        "uk-UA": "Партнер для глибокого мислення — моделювання предметної області, критика планів, написання навичок, систематичні огляди дизайну."
-      },
+      "name_i18n": { "en-US": "Cowork", "zh-CN": "Cowork" },
+      "description": "Deep thinking partner — domain modeling, plan grilling, skill writing, and systematic design reviews.",
+      "description_i18n": { "en-US": "Deep thinking partner.", "zh-CN": "深度思考伙伴 — 领域建模、方案拷问、技能编写。" },
       "avatar": "avatars/cowork.jpg",
       "agent_ref": "aionrs",
-      "enabled_skills": [
-        "skill-creator",
-        "domain-modeling",
-        "grill-me",
-        "grill-with-docs",
-        "grilling",
-        "writing-great-skills"
-      ],
+      "enabled_skills": ["skill-creator", "domain-modeling", "grill-me", "grill-with-docs", "grilling", "writing-great-skills"],
       "custom_skill_names": [],
       "disabled_builtin_skills": [],
       "rule_file": "rules/cowork.{locale}.md",
-      "prompts": [
-        "Model the domain for this billing system",
-        "Grill my design proposal for the new feature",
-        "Write a new skill for Jira ticket management"
-      ],
-      "prompts_i18n": {
-        "en-US": [
-          "Model the domain for this billing system",
-          "Grill my design proposal for the new feature",
-          "Write a new skill for Jira ticket management"
-        ],
-        "zh-CN": [
-          "为这个计费系统建领域模型",
-          "拷问我的新功能设计方案",
-          "写一个 Jira 工单管理的新技能"
-        ],
-        "ru-RU": [
-          "Проанализируй структуру текущего проекта и предложи улучшения",
-          "Автоматизируй процесс сборки и развёртывания",
-          "Извлеки и обобщи ключевую информацию из всех PDF-файлов"
-        ],
-        "uk-UA": [
-          "Проаналізувати структуру поточного проекту та запропонувати покращення",
-          "Автоматизувати процес збірки та розгортання",
-          "Витягти та узагальнити ключову інформацію з усіх файлів PDF"
-        ]
-      },
+      "prompts": ["Grill my design", "Model this domain"],
+      "prompts_i18n": { "en-US": ["Grill my design", "Model this domain"], "zh-CN": ["拷问我的设计", "为这个领域建模"] },
       "models": []
     },
     {
       "id": "aionui-assistant",
-      "name": "AionUi Butler",
-      "name_i18n": {
-        "en-US": "AionUi Butler",
-        "zh-CN": "AionUi管家",
-        "ru-RU": "Дворецкий AionUi",
-        "uk-UA": "Дворецький AionUi"
-      },
-      "description": "Your all-in-one AionUi butler: set up assistants, skills, MCP servers and LLM providers; set up remote access so you can reach AionUi from your phone or share a link; and diagnose problems like stuck conversations, failing models, or a scheduled task that didn't run.",
-      "description_i18n": {
-        "en-US": "Your all-in-one AionUi butler: set up assistants, skills, MCP servers and LLM providers; set up remote access so you can reach AionUi from your phone or share a link; and diagnose problems like stuck conversations, failing models, or a scheduled task that didn't run.",
-        "zh-CN": "你的 AionUi 全能管家：配置助手、技能、MCP 服务器与 LLM 模型；设置远程访问，让你在手机或外网也能打开 AionUi、生成分享链接；还能诊断卡住的会话、失败的模型调用，或定时任务为何没执行。",
-        "ru-RU": "Ваш универсальный дворецкий AionUi: настройка ассистентов, навыков, серверов MCP и провайдеров LLM; настройка удалённого доступа, чтобы открывать AionUi с телефона или делиться ссылкой; и диагностика проблем — зависших разговоров, сбоев моделей или почему не выполнилась запланированная задача.",
-        "uk-UA": "Ваш універсальний дворецький AionUi: налаштування асистентів, навичок, серверів MCP і провайдерів LLM; налаштування віддаленого доступу, щоб відкривати AionUi з телефона або ділитися посиланням; і діагностика проблем — зависань розмов, збоїв моделей або чому не виконалося заплановане завдання."
-      },
+      "name": "Enabling 管家",
+      "name_i18n": { "en-US": "Enabling Butler", "zh-CN": "Enabling 管家" },
+      "description": "System configuration and troubleshooting.",
+      "description_i18n": { "en-US": "System configuration and troubleshooting.", "zh-CN": "系统配置与故障排查。" },
       "avatar": "avatars/aionui-assistant.jpg",
       "agent_ref": "aionrs",
-      "enabled_skills": [
-        "aionui-config",
-        "aionui-troubleshooting",
-        "aionui-webui-public"
-      ],
+      "enabled_skills": ["aionui-config", "aionui-troubleshooting", "aionui-webui-public", "aionui-webui-setup"],
       "custom_skill_names": [],
       "disabled_builtin_skills": [],
       "rule_file": "rules/aionui-assistant.{locale}.md",
-      "prompts": [
-        "Add a new LLM provider and API key, then set it as the default model",
-        "Set up remote access for me, so I can open AionUi from my phone when I'm out",
-        "A conversation is stuck — please diagnose what's wrong",
-        "Create a new assistant and attach a skill to it"
-      ],
-      "prompts_i18n": {
-        "en-US": [
-          "Add a new LLM provider and API key, then set it as the default model",
-          "Set up remote access for me, so I can open AionUi from my phone when I'm out",
-          "A conversation is stuck — please diagnose what's wrong",
-          "Create a new assistant and attach a skill to it"
-        ],
-        "zh-CN": [
-          "添加一个新的 LLM 模型和 API Key，并设为默认模型",
-          "帮我配置远程访问，让我在外面用手机也能打开 AionUi",
-          "有个会话卡住了，帮我诊断哪里出了问题",
-          "创建一个新助手，并给它绑定一个技能"
-        ],
-        "ru-RU": [
-          "Добавь нового провайдера LLM и API-ключ, затем сделай его моделью по умолчанию",
-          "Настрой удалённый доступ, чтобы я мог открывать AionUi с телефона, когда меня нет",
-          "Разговор завис — пожалуйста, диагностируй, что не так",
-          "Создай нового ассистента и подключи к нему навык"
-        ],
-        "uk-UA": [
-          "Додай нового провайдера LLM та API-ключ, потім зроби його моделлю за замовчуванням",
-          "Налаштуй віддалений доступ, щоб я міг відкривати AionUi з телефона, коли мене немає",
-          "Розмова зависла — будь ласка, діагностуй, що не так",
-          "Створи нового асистента й підключи до нього навичку"
-        ]
-      },
+      "prompts": ["Diagnose a stuck conversation", "Add an LLM provider"],
+      "prompts_i18n": { "en-US": ["Diagnose a stuck conversation", "Add an LLM provider"], "zh-CN": ["诊断卡住的会话", "添加 LLM 模型"] },
       "models": []
     },
     {
       "id": "jira-assistant",
-      "name": "Jira Assistant",
-      "name_i18n": {
-        "en-US": "Jira Assistant",
-        "zh-CN": "Jira 助手",
-        "ru-RU": "Jira Ассистент",
-        "uk-UA": "Jira Асистент"
-      },
-      "description": "Manage Jira tickets and Zendao tasks — search by JQL, view issue details, query and create Zendao tasks, bugs, and stories.",
-      "description_i18n": {
-        "en-US": "Manage Jira tickets and Zendao tasks — search by JQL, view issue details, query and create Zendao tasks, bugs, and stories.",
-        "zh-CN": "Jira + 禅道工单管理 — JQL 搜索、工单详情、禅道任务查询与创建。",
-        "ru-RU": "Запрос, анализ и управление тикетами Jira — поиск по JQL, просмотр деталей и комментариев, сводки статусов и рекомендации.",
-        "uk-UA": "Запит, аналіз і керування тікетами Jira — пошук за JQL, перегляд деталей і коментарів, зведення статусів і рекомендації."
-      },
+      "name": "Jira+禅道助手",
+      "name_i18n": { "en-US": "Jira+Zendao", "zh-CN": "Jira+禅道助手" },
+      "description": "Jira and Zendao project management.",
+      "description_i18n": { "en-US": "Jira and Zendao task management.", "zh-CN": "Jira 和禅道工单管理。" },
       "avatar": "avatars/aionui-assistant.jpg",
       "agent_ref": "aionrs",
-      "enabled_skills": [
-        "zentao-setup",
-        "ops-jira",
-        "zentao-task",
-        "zentao-bug-create"
-      ],
+      "enabled_skills": ["ops-jira", "zentao-task", "zentao-bug-create"],
       "custom_skill_names": [],
       "disabled_builtin_skills": [],
       "rule_file": "rules/jira-assistant.{locale}.md",
-      "prompts": [
-        "Search my open tickets assigned to me",
-        "Show me the details of PROJ-123",
-        "Summarize all high-priority tickets due this week"
-      ],
-      "prompts_i18n": {
-        "en-US": [
-          "Search my open tickets assigned to me",
-          "Show me the details of PROJ-123",
-          "Summarize all high-priority tickets due this week"
-        ],
-        "zh-CN": [
-          "搜索分配给我的未完成工单",
-          "查看 PROJ-123 的详细信息",
-          "汇总本周到期的所有高优先级工单"
-        ],
-        "ru-RU": [
-          "Найди мои открытые тикеты, назначенные на меня",
-          "Покажи детали PROJ-123",
-          "Собери все высокоприоритетные тикеты на эту неделю"
-        ],
-        "uk-UA": [
-          "Знайди мої відкриті тікети, призначені на мене",
-          "Покажи деталі PROJ-123",
-          "Збери всі високопріоритетні тікети на цей тиждень"
-        ]
-      },
-      "models": []
-    },
-    {
-      "id": "billing-assistant",
-      "name": "账务助手",
-      "name_i18n": {
-        "en-US": "Billing Assistant",
-        "zh-CN": "账务助手"
-      },
-      "description": "SM81 billing expert — diagnose issues with systematic data tracing, and answer billing concepts, invoice types, MRC logic, and Jasper templates.",
-      "description_i18n": {
-        "en-US": "SM81 billing expert — diagnose issues with systematic data tracing, and answer billing concepts, invoice types, MRC logic, and Jasper templates.",
-        "zh-CN": "SM81 账务全能助手 — 排查月租/退费/BS 异常，解答出账流程、发票类型、MRC 逻辑、Jasper 模板。"
-      },
-      "avatar": "avatars/aionui-assistant.jpg",
-      "agent_ref": "aionrs",
-      "enabled_skills": [
-        "billing-context",
-        "billing-troubleshoot",
-        "billing-sql",
-        "billing-scripts"
-      ],
-      "custom_skill_names": [],
-      "disabled_builtin_skills": [],
-      "rule_file": "rules/billing-assistant.{locale}.md",
-      "prompts": [
-        "0183045564 这个号月租不对，帮我排查",
-        "Regular Invoice 和 Sales Invoice 有什么区别",
-        "Jasper 模板怎么修改和部署"
-      ],
-      "prompts_i18n": {
-        "en-US": [
-          "Check why subscriber 0183045564 has wrong MRC charges",
-          "What's the difference between Regular and Sales Invoice",
-          "How to modify and deploy Jasper templates"
-        ],
-        "zh-CN": [
-          "0183045564 这个号月租不对，帮我排查",
-          "Regular Invoice 和 Sales Invoice 有什么区别",
-          "Jasper 模板怎么修改和部署"
-        ]
-      },
+      "prompts": ["Create a Jira issue", "Create a Zendao task"],
+      "prompts_i18n": { "en-US": ["Create a Jira issue", "Create a Zendao task"], "zh-CN": ["创建 Jira 问题", "创建禅道任务"] },
       "models": []
     }
   ]
